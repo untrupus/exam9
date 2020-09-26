@@ -1,13 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
+import Layout from "./components/Layout/Layout";
+import {Route, Switch} from "react-router-dom";
+import ContactList from "./containers/ContactList/ContactList";
+import AddContact from "./containers/AddContact/AddContact";
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-
-    </div>
-  );
+    return (
+        <div className="App">
+            <Layout>
+                <Switch>
+                    <Route path="/" exact component={ContactList}/>
+                    <Route path="/add"  component={AddContact}/>
+                    <Route render={() => <h1>404</h1>}/>
+                </Switch>
+            </Layout>
+        </div>
+    );
 }
 
 export default App;

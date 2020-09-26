@@ -37,7 +37,7 @@ const Modal = props => {
                             className="addBtn"
                             onClick={edit}
                     >
-                        <Link to='/edit'>Edit</Link>
+                        <Link className="edit" to={'/' + id + '/edit'}>Edit</Link>
 
                     </button>
                     <button type="button"

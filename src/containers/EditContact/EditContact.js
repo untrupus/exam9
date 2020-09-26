@@ -1,13 +1,20 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import axiosOrder from "../../axiosOrder";
+import {useSelector} from "react-redux";
 
 const EditContact = props => {
+    const contacts = useSelector(state => state.contacts);
+    const id = props.match.params.id;
     const [value, setValue] = useState({
         name: '',
         phone: '',
         mail: '',
         photo: ''
     });
+
+    useEffect(() => {
+       setValue(contacts[id]);
+    }, [contacts, id]);
 
     const onChangeHandler = event => {
         const name = event.target.name;
@@ -20,7 +27,7 @@ const EditContact = props => {
 
     const saveContact = async () => {
         if (value.name !== '' && value.phone !== '' && value.mail !== '' && value.photo !== '') {
-            await axiosOrder.put('contacts.json', value);
+            await axiosOrder.put('contacts/' + id + '.json', value);
             props.history.push({
                 pathname: '/'
             });

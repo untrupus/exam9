@@ -1,0 +1,9 @@
+.inputDescription {
+    display: flex;
+    justify-content: space-between;
+    width: 400px;
+}
+
+.btn {
+    margin-right: 20px;
+}

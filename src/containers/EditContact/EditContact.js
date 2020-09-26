@@ -1,8 +1,7 @@
 import React, {useState} from 'react';
 import axiosOrder from "../../axiosOrder";
-import './AddContact.css';
 
-const AddContact = props => {
+const EditContact = props => {
     const [value, setValue] = useState({
         name: '',
         phone: '',
@@ -21,7 +20,7 @@ const AddContact = props => {
 
     const saveContact = async () => {
         if (value.name !== '' && value.phone !== '' && value.mail !== '' && value.photo !== '') {
-            await axiosOrder.post('contacts.json', value);
+            await axiosOrder.put('contacts.json', value);
             props.history.push({
                 pathname: '/'
             });
@@ -52,7 +51,7 @@ const AddContact = props => {
 
     return (
         <div className="add">
-            <h3>Add new contact</h3>
+            <h3>Edit contact</h3>
             <div>
                 <p className="inputDescription">Name:
                     <input
@@ -88,7 +87,7 @@ const AddContact = props => {
                     /></p>
                 <p className="inputDescription">Photo preview:</p>
                 <img className="preview"
-                    src={previewImg}
+                     src={previewImg}
                      alt="preview"
                 />
             </div>
@@ -110,4 +109,4 @@ const AddContact = props => {
     );
 };
 
-export default AddContact;
+export default EditContact;

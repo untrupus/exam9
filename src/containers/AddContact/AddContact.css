@@ -1,9 +1,29 @@
 .inputDescription {
     display: flex;
     justify-content: space-between;
-    width: 400px;
+    width: 500px;
+    font-weight: bold;
+    align-items: center;
 }
 
-.btn {
-    margin-right: 20px;
+.buttons {
+    margin-top: 20px;
+}
+
+.preview {
+    width: 150px;
+    height: 150px;
+}
+
+.add {
+    background: lightblue;
+    border-radius: 4px;
+    margin-top: 10px;
+    padding: 20px;
+}
+
+.field {
+    padding: 10px;
+    border-radius: 4px;
+    width: 300px;
 }

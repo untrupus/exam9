@@ -3,6 +3,7 @@ import Layout from "./components/Layout/Layout";
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 import ContactList from "./containers/ContactList/ContactList";
 import AddContact from "./containers/AddContact/AddContact";
+import EditContact from "./containers/EditContact/EditContact";
 import './App.css';
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
                     <Switch>
                         <Route path="/" exact component={ContactList}/>
                         <Route path="/add" component={AddContact}/>
+                        <Route path="/:id/edit" exact component={EditContact}/>
                         <Route render={() => <h1>404</h1>}/>
                     </Switch>
                 </Layout>

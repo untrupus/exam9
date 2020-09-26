@@ -1,7 +1,10 @@
 import {
     FETCH_CONTACTS_ERROR,
     FETCH_CONTACTS_REQUEST,
-    FETCH_CONTACTS_SUCCESS
+    FETCH_CONTACTS_SUCCESS,
+    SHOW_MODAL,
+    CLOSE_MODAL,
+    DELETE_CONTACT
 } from "./actionTypes";
 
 import axiosOrder from "../axiosOrder";
@@ -27,3 +30,17 @@ export const fetchContacts = () => {
         }
     };
 };
+
+export const showModal = (id) => {
+    return ({type: SHOW_MODAL, id});
+};
+
+export const closeModal = () => {
+    return {type: CLOSE_MODAL};
+};
+
+export const deleteContacts = () => {
+    return {type: DELETE_CONTACT};
+};
+
+

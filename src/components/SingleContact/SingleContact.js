@@ -3,7 +3,8 @@ import './SingleContact.css';
 
 const SingleContact = props => {
     return (
-        <div className="singleContact">
+        <div className="singleContact"
+             onClick={props.click}>
             <img src={props.src}
                  className="contactImg"
                  alt="contact"

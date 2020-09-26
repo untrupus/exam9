@@ -9,7 +9,6 @@ const SingleContact = props => {
                  alt="contact"
             />
             <h2>{props.name}</h2>
-
         </div>
     );
 };
